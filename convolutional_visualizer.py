@@ -1,5 +1,5 @@
 # ------------------------------------------------------------
-# Marvellous Convolution Demo with Visualization
+# Convolution Demo with Visualization
 # 6x6 Grayscale Image
 # Top 3 rows = 0
 # Bottom 3 rows = 255
@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 # ------------------------------------------------------------
 # Function to print matrix nicely
 # ------------------------------------------------------------
-def Marvellous_Print_Matrix(title, matrix):
+def Print_Matrix(title, matrix):
     print("\n" + "-" * 50)
     print(title)
     print("-" * 50)
@@ -35,7 +35,7 @@ image = np.array([
     [255, 255, 255, 255, 255, 255]
 ], dtype=int)
 
-Marvellous_Print_Matrix("Original 6x6 Image", image)
+Print_Matrix("Original 6x6 Image", image)
 
 # ------------------------------------------------------------
 # Step 2 : Create 3x3 Kernel
@@ -47,7 +47,7 @@ kernel = np.array([
     [ 1,  1,  1]
 ], dtype=int)
 
-Marvellous_Print_Matrix("3x3 Edge Detection Kernel", kernel)
+Print_Matrix("3x3 Edge Detection Kernel", kernel)
 
 # ------------------------------------------------------------
 # Step 3 : Prepare Feature Map
@@ -67,11 +67,11 @@ for i in range(4):
         # Extract 3x3 region from image
         region = image[i:i+3, j:j+3]
 
-        Marvellous_Print_Matrix("Current 3x3 Region from Image", region)
+        Print_Matrix("Current 3x3 Region from Image", region)
 
         # Element-wise multiplication
         multiplied = region * kernel
-        Marvellous_Print_Matrix("Region * Kernel", multiplied)
+        Print_Matrix("Region * Kernel", multiplied)
 
         # Sum all elements
         result = np.sum(multiplied)
@@ -80,12 +80,12 @@ for i in range(4):
         # Store in feature map
         feature_map[i][j] = result
 
-        Marvellous_Print_Matrix("Feature Map Built So Far", feature_map)
+        Print_Matrix("Feature Map Built So Far", feature_map)
 
 # ------------------------------------------------------------
 # Step 5 : Final Feature Map
 # ------------------------------------------------------------
-Marvellous_Print_Matrix("Final Feature Map", feature_map)
+Print_Matrix("Final Feature Map", feature_map)
 
 # ------------------------------------------------------------
 # Step 6 : Graphical Visualization
