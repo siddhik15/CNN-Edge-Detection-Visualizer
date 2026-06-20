@@ -1,6 +1,7 @@
 # CNN Edge Detection and Convolution Visualizer
 
 ## Overview
+
 This project demonstrates how Convolutional Neural Networks (CNNs) detect edges using convolution operations and feature maps.
 
 The implementation visualizes:
